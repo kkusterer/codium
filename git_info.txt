@@ -13,3 +13,14 @@ corect order w/o add_to_repo
 3 git commit -m "."
 4 git push origin main
 4 check the repo
+
+
+
+for python vm
+python3 -m venv venv
+then source venv/bin/activate
+then pip install --upgrade pip
+then pip install (exe flask)
+then run progrma
+then deactivate to deactivate
+
