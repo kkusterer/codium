@@ -13,5 +13,3 @@ corect order w/o add_to_repo
 3 git commit -m "."
 4 git push origin main
 4 check the repo
-
-cm check
