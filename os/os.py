@@ -365,6 +365,7 @@ commands = {
     "permarunoff": cmd_permarunoff,
     "rd_file": cmd_rd_ext_file,
     "mk_file": cmd_mk_ext_file,
+    "flask": cmd_start_flask,
     
 }
 
