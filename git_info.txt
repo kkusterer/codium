@@ -3,7 +3,8 @@ add_to_repo is an alias for git add . && git commit -m "."
 
 1. use ctrl+s to save the courent files
 2. type add_to_repo
-3. check the repo 3 miniuts later and see if it updated
+3. type git push origin main
+4. check the repo 3 miniuts later and see if it updated
 
 
 corect order w/o add_to_repo
