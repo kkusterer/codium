@@ -7,7 +7,7 @@ running = True
 can_shutdown = True
 
 MAX_CONTENT = 256
-
+#content
 class Node:
     def __init__(self, name, is_dir):
         self.name = name
