@@ -1,5 +1,4 @@
 import os
-import time
 
 command = input("what command: ") or "ls -al"
 output_file = "file_list.txt"
