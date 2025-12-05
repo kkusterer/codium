@@ -299,12 +299,10 @@ def cmd_mk_ext_file(args):
         except:
             () 
 
-def cmd_start_flask():
-    app = Flask(__name__)
-
-    @app.route("/")
-    def index():
-        return render_template("index.html")
+def instant_exit():
+    global running
+    running = False
+    os.system('clear') 
 
 def cmd_help(args):
     print("----------------------------------------------------------------------")
@@ -365,7 +363,6 @@ commands = {
     "permarunoff": cmd_permarunoff,
     "rd_file": cmd_rd_ext_file,
     "mk_file": cmd_mk_ext_file,
-    "flask": cmd_start_flask,
     
 }
 
