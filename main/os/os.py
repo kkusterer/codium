@@ -109,7 +109,7 @@ readme.content = "Welcome to KalebOS \nType 'help' to see commands"
 add_child(root, readme)
 
 authors = Node("authors.txt", False)
-authors.content = "The authors shall be listed as such:\nName, Email, what thay did\nKaleb Kusterer, kkusterer@students.vlhs.com, main devloper"
+authors.content = "The authors shall be listed as such:\nName, Email, what thay did\nKaleb Kusterer, kkusterer@students.vlhs.com, main dev"
 add_child(root, authors)
 
 
@@ -261,31 +261,70 @@ def cmd_pwd(args):
         n = n.parent
     print(path if path != "/" else "/")
 
+def mk_ext_file(args):
+    file_name = input("Name of file( only name not [.txt]) : ") or "test"
+    file_extention = input("what is the file extention (.txt, .py) : ") or ".txt"
+    file = file_name + file_extention
+    mode ="w"
+    try:
+        with open(file, mode) as file:
+            file.write(f"{args}" "\n")
+    except:
+        ()
+
+def cmd_rd_ext_file(args):
+    file = args
+    mode = "r"
+    try:
+        with open(file, mode) as file_object:
+            content = file_object.read()
+            print("file content:")
+            print(content)
+    except:
+        ()
+
+def cmd_mk_ext_file(args):
+    if not args:
+        print("provide file name with extention")
+
+    else:
+        try:
+            file_contents = input("file contents: ")
+            file = args
+
+            mode ="w"
+            with open(file, mode) as file:
+                file.write(f"{file_contents}" "\n")
+        except:
+            () 
+
 def cmd_help(args):
     print("----------------------------------------------------------------------")
     print("KalebOS Command Guide:")
     print("----------------------------------------------------------------------")
     print("File/Folder Commands:")
-    print("  ls                 - List files and folders in current directory")
-    print("  cd DIR             - Change directory to DIR (use '..' to go up)")
-    print("  mkdir DIR          - Create a new folder named DIR")
-    print("  touch FILE         - Create a new empty file named FILE")
-    print("  echo TEXT > FILE   - Write TEXT into FILE (creates if missing)")
-    print("  cat FILE           - Show contents of FILE")
-    print("  pwd                - Show the current folder path")
+    print("  ls                     - List files and folders in current directory")
+    print("  cd DIR                 - Change directory to DIR (use '..' to go up)")
+    print("  mkdir DIR              - Create a new folder named DIR")
+    print("  touch FILE             - Create a new empty file named FILE")
+    print("  echo TEXT > FILE       - Write TEXT into FILE (creates if missing)")
+    print("  cat FILE               - Show contents of FILE")
+    print("  pwd                    - Show the current folder path")
     print("----------------------------------------------------------------------")
     print("Utility Commands:")
-    print("  clear              - Clear the terminal screen")
-    print("  exit               - Exit the os")
-    print("  help               - Shows help menu")
+    print("  clear                  - Clear the terminal screen")
+    print("  exit                   - Exit the os")
+    print("  help                   - Shows help menu")
     print("----------------------------------------------------------------------")
     print("Experimental Commands:")
-    print("  encode             - Encode or decode a string using a Caesar cipher")
-    print("  search QUERY       - Open your browser and search QUERY on the web")
-    print("  info               - Gives information of you machine and cpu")
-    print("  calc               - opens calaulator")
-    print("  permarunon         - prevents the os from being shutdown")
-    print("  permarunoff        - lets the os shutdown")
+    print("  encode                 - Encode or decode a string using a Caesar cipher")
+    print("  search QUERY           - Open your browser and search QUERY on the web")
+    print("  info                   - Gives information of you machine and cpu")
+    print("  calc                   - opens calaulator")
+    print("  permarunon             - prevents the os from being shutdown")
+    print("  permarunoff            - lets the os shutdown")
+    print("  rd_file NAME OF FILE   - Prints contents form file outside the os")
+    print("  mk_file NAME OF FILE   - Makes a file with the content you want outside the os")
     print("----------------------------------------------------------------------")
     print("Usage Examples:")
     print("  ls")
@@ -316,6 +355,8 @@ commands = {
     "calc": cmd_calc,
     "permarunon": cmd_permarunon,
     "permarunoff": cmd_permarunoff,
+    "rd_file": cmd_rd_ext_file,
+    "mk_file": cmd_mk_ext_file,
     
 }
 
