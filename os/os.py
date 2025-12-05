@@ -2,6 +2,7 @@ import os
 import time
 import webbrowser
 import platform
+from flask import Flask, request, render_template
 
 running = True
 can_shutdown = True
@@ -297,6 +298,13 @@ def cmd_mk_ext_file(args):
                 file.write(f"{file_contents}" "\n")
         except:
             () 
+
+def cmd_start_flask():
+    app = Flask(__name__)
+
+    @app.route("/")
+    def index():
+        return render_template("index.html")
 
 def cmd_help(args):
     print("----------------------------------------------------------------------")
