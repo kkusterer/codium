@@ -347,6 +347,13 @@ def cmd_run_config(args):
     else:
         print("is not in config file")
 
+def history(command_history):
+    try:
+        with open("history.txt", "a") as file:
+            file.write(f"{command_history}" "\n")      
+    except:
+        ()
+
 def cmd_help(void):
     print("----------------------------------------------------------------------")
     print("KalebOS Command Guide:")
@@ -420,6 +427,8 @@ def handle_command(input_line):
         commands[cmd](args)
     else:
         print(f"* Unknown command: {cmd}")
+
+    history(cmd)
 
 def main():
     global current_dir
