@@ -2,7 +2,6 @@ import os
 import time
 import webbrowser
 import platform
-from flask import Flask, request, render_template
 import pygame
 
 running = True
