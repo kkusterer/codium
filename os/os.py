@@ -347,7 +347,7 @@ def cmd_run_config(args):
     else:
         print("is not in config file")
 
-def cmd_help(args):
+def cmd_help(void):
     print("----------------------------------------------------------------------")
     print("KalebOS Command Guide:")
     print("----------------------------------------------------------------------")
