@@ -3,6 +3,7 @@ import time
 import webbrowser
 import platform
 from flask import Flask, request, render_template
+import pygame
 
 running = True
 can_shutdown = True
@@ -298,6 +299,37 @@ def cmd_mk_ext_file(args):
                 file.write(f"{file_contents}" "\n")
         except:
             () 
+def cmd_window(void):
+    pygame.init()
+
+    screen = pygame.display.set_mode((600, 500))
+    pygame.display.set_caption("Button Example")
+
+    button_color = (0, 150, 255)
+    button_rect = pygame.Rect(200, 200, 200, 60)  # x, y, width, height
+
+    font = pygame.font.Font(None, 36)
+    button_text = font.render("HI", True, (225, 225, 225))
+    button_text_rect = button_text.get_rect(center=button_rect.center)
+
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if button_rect.collidepoint(event.pos):
+                    print("Button clicked!")
+
+        screen.fill((30, 30, 30))
+
+        pygame.draw.rect(screen, button_color, button_rect)
+        screen.blit(button_text, button_text_rect)
+
+        pygame.display.update()
+
+    pygame.quit()
 
 def instant_exit():
     global running
@@ -331,6 +363,7 @@ def cmd_help(args):
     print("  permarunoff            - lets the os shutdown")
     print("  rd_file NAME OF FILE   - Prints contents form file outside the os")
     print("  mk_file NAME OF FILE   - Makes a file with the content you want outside the os")
+    print("  window                 - Opens a window")
     print("----------------------------------------------------------------------")
     print("Usage Examples:")
     print("  ls")
@@ -363,6 +396,7 @@ commands = {
     "permarunoff": cmd_permarunoff,
     "rd_file": cmd_rd_ext_file,
     "mk_file": cmd_mk_ext_file,
+    "window": cmd_window,
 
 }
 
@@ -373,7 +407,7 @@ def handle_command(input_line):
     if cmd in commands:
         commands[cmd](args)
     else:
-        print(f"Unknown command: {cmd}")
+        print(f"* Unknown command: {cmd}")
 
 def main():
     global current_dir
@@ -382,8 +416,11 @@ def main():
     print("Type 'help' for a list of commands.\n")
 
     while running:
-        input_line = input("KalebOS> ")
-        handle_command(input_line)
+        input_line = input("o KalebOS> ")
+        if input_line == "":
+            ...
+        else:
+            handle_command(input_line)
 
 if __name__ == "__main__":
     main()
