@@ -113,6 +113,10 @@ authors = Node("authors.txt", False)
 authors.content = "The authors shall be listed as such:\nName, Email, what thay did\nKaleb Kusterer, kkusterer@students.vlhs.com, main dev"
 add_child(root, authors)
 
+config = Node("config.txt", False)
+config.content = "test" " " "test2"
+add_child(root, config)
+
 
 def cmd_exit(args):
     global can_shutdown
@@ -177,7 +181,7 @@ def cmd_encode(args):
             print("Decoded string:", result)
 
 
-def cmd_info(arg):
+def cmd_info(args):
     os_name = os.name
     release_date = platform.release()
     system_name = platform.system()
@@ -335,6 +339,14 @@ def instant_exit():
     running = False
     os.system('clear') 
 
+def cmd_run_config(args):
+    if args in config.content:
+        print("is in config file")
+    elif not args:
+        print("provide contents")
+    else:
+        print("is not in config file")
+
 def cmd_help(args):
     print("----------------------------------------------------------------------")
     print("KalebOS Command Guide:")
@@ -396,6 +408,7 @@ commands = {
     "rd_file": cmd_rd_ext_file,
     "mk_file": cmd_mk_ext_file,
     "window": cmd_window,
+    "run_config": cmd_run_config,
 
 }
 
