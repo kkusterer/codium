@@ -354,6 +354,26 @@ def history(command_history):
     except:
         ()
 
+def cmd_history_rd(void):
+    try:
+        with open("history.txt", "r") as file_object:
+            content = file_object.read()
+            print("file content:")
+            print(content)
+    except:
+        ()
+
+def cmd_delete_history(void):
+    delete = input("are you shure you want to delete the history file y/n")
+    if delete.lower() == "y":
+        try:
+            with open("history.txt", "w") as file:
+                file.write("")
+        except:
+            ()
+    else:
+        print("did not delete history file")
+
 def cmd_help(void):
     print("----------------------------------------------------------------------")
     print("KalebOS Command Guide:")
@@ -382,6 +402,9 @@ def cmd_help(void):
     print("  rd_file NAME OF FILE   - Prints contents form file outside the os")
     print("  mk_file NAME OF FILE   - Makes a file with the content you want outside the os")
     print("  window                 - Opens a window")
+    print("  run_config ARG         - Checks if the arg is in the config file")
+    print("  rd_history             - Reads teh contetts of the history file")
+    print("  delete_history         - Deletes the contents of the history file")
     print("----------------------------------------------------------------------")
     print("Usage Examples:")
     print("  ls")
@@ -416,6 +439,8 @@ commands = {
     "mk_file": cmd_mk_ext_file,
     "window": cmd_window,
     "run_config": cmd_run_config,
+    "rd_history": cmd_history_rd,
+    "delete_history": cmd_delete_history,
 
 }
 
