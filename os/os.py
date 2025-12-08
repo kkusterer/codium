@@ -309,7 +309,7 @@ def cmd_window(void):
     pygame.display.set_caption("Button Example")
 
     button_color = (0, 150, 255)
-    button_rect = pygame.Rect(200, 200, 200, 60)  # x, y, width, height
+    button_rect = pygame.Rect(200, 200, 200, 60)
 
     font = pygame.font.Font(None, 36)
     button_text = font.render("HI", True, (225, 225, 225))
