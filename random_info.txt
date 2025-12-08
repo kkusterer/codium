@@ -1,5 +1,7 @@
 use add_to_repo
 add_to_repo is an alias for git add . && git commit -m "."
+alias located in the .zshrc file
+
 
 1. use ctrl+s to save the courent files
 2. type add_to_repo
