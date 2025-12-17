@@ -11,30 +11,7 @@ def done():
         else:
             print("pick n or y")
 
-def recipe_1():
-    print("Title: recipe_1 ")
-    print("Total Time: N/A , Cook Time: N/A, Prep Time: N/A")
-    print("Ingreadents: N/A")
-    print("Step 1: N/A")
-    print("Step 2: N/A")
-    print("Step 3: N/A")
-    print("Step 4: N/A")
-    print("Step 5: N/A")
-    done()
-
-
-def recipe_2():
-    print("Title: recipe_2 ")
-    print("Total Time: N/A , Cook Time: N/A, Prep Time: N/A")
-    print("Ingreadents: N/A")
-    print("Step 1: N/A")
-    print("Step 2: N/A")
-    print("Step 3: N/A")
-    print("Step 4: N/A")
-    print("Step 5: N/A")
-    done()
-
-
+ 
 def recipe_1():
     print("Title: Grilled Cheese Sandwich")
     print("Total Time: 10 min , Cook Time: 5 min, Prep Time: 5 min")
