@@ -1,15 +1,35 @@
 list = {
-     "a" : "00001",
-     "b" : "00011",
-     "c" : "00111",
-     "d" : "01111",
-     "e" : "11111",
+     {
+    'a': '00000',
+    'b': '10000',
+    'c': '11000',
+    'd': '11100',
+    'e': '11110',
+    'f': '11111',
+    'g': '01000',
+    'h': '01100',
+    'i': '01110',
+    'j': '01111',
+    'k': '10111',
+    'l': '10001',
+    'm': '10011',
+    'n': '10101',
+    'o': '11011',
+    'p': '10010',
+    'q': '110011',
+    'r': '11111',
+    's': '11111',
+    't': '11111',
+    'u': '11111',
+    'v': '11111',
+    'w': '11111',
+    'x': '11111',
+    'y': '11111',
+    'z': '11111'
+}
+
 }
 while True:
-    user_input = input("enter a letter or string: ")
-
-    for i in user_input:
-        if user_input in list:
-            print(f"{user_input} is on the list")
-        else:
-            print(f"{user_input} is not in list")  
+    user_input = input("enter a letter: ").lower().strip()  
+    if user_input in list:
+        print(list[user_input])
