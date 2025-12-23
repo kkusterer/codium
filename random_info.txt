@@ -25,3 +25,4 @@ then pip install (exe flask)
 then run progrma
 then deactivate to deactivate
 
+runflask is flask run --host=0.0.0.0
