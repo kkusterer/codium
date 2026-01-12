@@ -29,6 +29,7 @@ runflask is flask run --host=0.0.0.0
 
 
 ctrl + s on file to save
+cd to codium dir
 git status
 git add .
 git commit -m "."
