@@ -32,5 +32,5 @@ ctrl + s on file to save
 git status
 git add .
 git commit -m "."
-git push origin/main
+git push origin main
 git status
