@@ -26,3 +26,11 @@ then run progrma
 then deactivate to deactivate
 
 runflask is flask run --host=0.0.0.0
+
+
+ctrl + s on file to save
+git status
+git add .
+git commit -m "."
+git push origin/main
+git status
