@@ -1,37 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title Goes Here</title>
+    <title>Robotics Alliance Survey</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0e1220;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-box {
+            background: #1a1f36;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            width: 350px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00ffff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            background: #2a3050;
+            color: white;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: #00ffff;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #00cccc;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>
-        Hello, World   
-    </h1>
+
+<div class="form-box">
+    <h1>Robotics Alliance Survey</h1>
 
     <form action="/submit" method="post">
-    <label for="team_number">Team Number:</label>
-    <input type="text" id="team_number" name="team_number" required><br><br>
+
+        <label for="team_number">Team Number</label>
+        <input type="text" id="team_number" name="team_number" required>
+
+        <label for="name_of_team">Name of Team</label>
+        <input type="text" id="name_of_team" name="name_of_team">
+
+        <label for="drive">Drive Type</label>
+        <select name="drive" id="drive">
+            <option value="Swerve">Swerve</option>
+            <option value="Tank">Tank</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>Can your robot climb the ladder ?</label>
+        <input type="radio" name="ladder_climb" value="Yes" required> Yes  
+        <input type="radio" name="ladder_climb" value="No"> No
+
+        <label>Highest RUNG reached</label>
+        <select name="rung">
+        <option value="Low">Low</option>
+        <option value="Mid">Mid</option>
+        <option value="High">High</option>
+        <option value="Cannot climb">Cannot climb</option>
+        </select>
+
+        <label>Can you score in AUTO?</label>
+        <input type="radio" name="auto_score" value="Yes" required> Yes
+        <input type="radio" name="auto_score" value="No"> No
+
+        <label>Average AUTO (ex: 3 fuel)</label>
+        <input type="text" name="auto_avg" placeholder="ex: 3 fuel">
+
+        <label>Primary Role</label>
+        <select name="role">
+        <option value="hub scorer">Hub Scorer</option>
+        <option value="fuel runner">Fuel Runner</option>
+        <option value="defense">Defense</option>
+        </select>
 
 
-    <label for="name_of_team">name of team:</label>
-    <input type="text" id="name_of_team" name="name_of_team"><br><br>
+        <input type="submit" value="Submit">
 
-    <label for="drive">Drive Type: </label>
-    <select name="drive" id="drive">
-    <option value="swerve">Swerve</option>
-    <option value="tank">Tank</option>
-    <option value="other">Other</option>
-    </select>
-    <br><br>
-
-    <input type="submit" value="Submit">
-</form>
-
-</select>
-
+    </form>
+</div>
 
 </body>
 </html>
