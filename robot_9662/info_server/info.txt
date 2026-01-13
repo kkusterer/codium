@@ -1,0 +1,15 @@
+--- Alliance Survey Submission ---
+
+-----***** 9662 *****-----
+
+Team Number: 9662
+Team Name: chargers
+Drive Type: Other
+Can Climb: No
+Highest Rung: High
+Auto Scoring: Yes
+Avg Auto Score: 44
+Primary Role: fuel runner
+----------------------------------
+
+

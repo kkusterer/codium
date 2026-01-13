@@ -35,3 +35,32 @@ git add .
 git commit -m "."
 git push origin main
 git status
+
+
+sql 
+SELECT * FROM responses;
+SELECT team_number, drive_type, can_climb FROM responses;
+SELECT * FROM responses
+    WHERE can_climb = 'Yes';
+SELECT * FROM responses
+    ORDER BY team_number ASC;
+SELECT COUNT(*) FROM responses;
+
+Show best auto scorers:
+
+SELECT team_number, auto_average
+FROM responses
+ORDER BY auto_average DESC;
+
+
+Find all swerve teams:
+
+SELECT team_number FROM responses
+WHERE drive_type = 'Swerve';
+
+enter: sqlite3 survey.db
+
+exit : .quit
+
+DELETE FROM responses; = DELETE everything
+
