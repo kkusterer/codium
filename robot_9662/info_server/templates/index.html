@@ -72,10 +72,10 @@
     <form action="/submit" method="post">
 
         <label for="team_number">Team Number</label>
-        <input type="text" id="team_number" name="team_number" required>
+        <input type="text" id="team_number" name="team_number" required autocomplete="off">
 
         <label for="name_of_team">Name of Team</label>
-        <input type="text" id="name_of_team" name="name_of_team">
+        <input type="text" id="name_of_team" name="name_of_team" autocomplete="off">
 
         <label for="drive">Drive Type</label>
         <select name="drive" id="drive">
@@ -101,15 +101,18 @@
         <input type="radio" name="auto_score" value="No"> No
 
         <label>Average AUTO (ex: 3 fuel)</label>
-        <input type="text" name="auto_avg" placeholder="ex: 3 fuel">
+        <input type="text" name="auto_avg" placeholder="ex: 3 fuel" autocomplete="off">
 
         <label>Primary Role</label>
         <select name="role">
         <option value="hub scorer">Hub Scorer</option>
         <option value="fuel runner">Fuel Runner</option>
         <option value="defense">Defense</option>
+        <option value="other">Other</option>
         </select>
 
+        <label for="pit_number">Pit Number</label>
+        <input type="text" id="pit_number" name="pit_number" required autocomplete="off">
 
         <input type="submit" value="Submit">
 

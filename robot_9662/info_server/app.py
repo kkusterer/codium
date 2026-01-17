@@ -16,7 +16,8 @@ def init_db():
             highest_rung TEXT,
             auto_score TEXT,
             auto_average TEXT,
-            primary_role TEXT
+            primary_role TEXT,
+            pit_num TEXT
         )
     """)
     conn.commit()
@@ -39,6 +40,7 @@ def submit():
     auto_score    = form.get("auto_score", "")
     auto_average  = form.get("auto_avg", "")
     primary_role  = form.get("role", "")
+    pit_num = form.get("pit_number", "")
 
     print("\n--- Alliance Survey Submission ---")
     print(f"Team Number:      {team_number}")
@@ -49,6 +51,7 @@ def submit():
     print(f"Auto Scoring:     {auto_score}")
     print(f"Avg Auto Score:   {auto_average}")
     print(f"Primary Role:     {primary_role}")
+    print(f"Pit number:       {pit_num}")
     print("----------------------------------\n")
 
     file_name = "info" 
@@ -67,8 +70,9 @@ def submit():
             file.write(f"\nCan Climb: {can_climb}") 
             file.write(f"\nHighest Rung: {highest_rung}") 
             file.write(f"\nAuto Scoring: {auto_score}") 
-            file.write(f"\nAvg Auto Score: {auto_average}") 
+            file.write(f"\nApit_numvg Auto Score: {auto_average}") 
             file.write(f"\nPrimary Role: {primary_role}") 
+            file.write(f"\nPit number:       {pit_num}")
             file.write("\n----------------------------------\n") 
             file.write("\n") 
             file.write("\n") 
@@ -79,11 +83,11 @@ def submit():
     cursor.execute("""
         INSERT INTO responses (
             team_number, team_name, drive_type, can_climb,
-            highest_rung, auto_score, auto_average, primary_role
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            highest_rung, auto_score, auto_average, primary_role, pit_num
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         team_number, team_name, drive_type, can_climb,
-        highest_rung, auto_score, auto_average, primary_role
+        highest_rung, auto_score, auto_average, primary_role, pit_num
     ))
     conn.commit()
     conn.close()
