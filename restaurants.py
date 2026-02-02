@@ -10,6 +10,8 @@ restaurants = [
     "Huannas", "Buffalo wild wings",
 ]
 
+curent_picks = []
+
 while True:
     try:
         os.system("cls" if os.name == "nt" else "clear")
@@ -17,6 +19,7 @@ while True:
         os.system("cls" if os.name == "nt" else "clear")
         for i in range(number):
             pick = random.choice(restaurants)
+            
             print(f"Random pick {i + 1}: {pick}")
         print()
         
