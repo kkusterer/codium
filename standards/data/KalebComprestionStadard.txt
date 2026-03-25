@@ -1,0 +1,4 @@
+KalebCompresitionStandard(KCS)
+
+the first 2 numbers are the sum of the orignal numbers
+the last digit is the number of 1's and 0's in the orignal string

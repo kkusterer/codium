@@ -1,0 +1,4 @@
+KalebTransferProtocol (KTP)
+
+takes a string possabally more than one word
+replaces spaces with the "." sign 
