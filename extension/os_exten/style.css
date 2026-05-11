@@ -1,0 +1,23 @@
+body {
+    background: black;
+    color: #00ff88;
+    font-family: monospace;
+    margin: 0;
+    padding: 10px;
+    width: 400px;
+}
+
+#terminal {
+    white-space: pre-wrap;
+    height: 300px;
+    overflow-y: auto;
+}
+
+input {
+    width: 100%;
+    background: black;
+    color: #00ff88;
+    border: none;
+    outline: none;
+    font-family: monospace;
+}

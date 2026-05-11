@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "My basic Extension",
+  "version": "1.0",
+  "action": {},
+  "background": {
+    "service_worker": "basic.js"
+  }
+}
