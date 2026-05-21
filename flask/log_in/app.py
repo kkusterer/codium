@@ -14,6 +14,10 @@ def login():
 
     if username == "kaleb" and password == "123":
         return render_template("good_login.html")
+        print("Normal User Login")
+    elif username == "admin" and password == "9876":
+        return render_template("admin_login.html")
+        print("Admin Login")
     else:
         return render_template("failed_login.html")
 
